@@ -1,1 +1,77 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Angular material theme */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+/* Other prebuilt themes:
+    deeppurple-amber.css
+    indigo-pink.css
+    pink-bluegrey.css
+    purple-green.css
+ */
+
+* {
+  font-family: Roboto, sans-serif;
+}
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+
+.fill-remaining-space {
+  /* This fills the remaining space, by using flexbox. https://developer.mozilla.org/en-US/docs/Web/CSS/flex
+ Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}
+
+
+.info {
+  padding: 6px 8px;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+
+.legend h4 {
+  margin: 0 0 5px;
+  color: #777;
+}
+
+.legend {
+  font-size: 14px;
+  line-height: 25px;
+  color: #555;
+
+}
+
+.legend img {
+  margin: 3px 5px 0px 0px;
+}
+
+.box {
+  display: flex;
+  align-items:center;
+}
+
+.map {
+  height: 100%;
+  padding: 0;
+}
+
+/* TODO: remove this, only for testing*/
+.see-border {
+  border: 2px solid red;
+}
+
+
