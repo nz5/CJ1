@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet author="o.skorykh" id="001">
+        <comment>Add table users</comment>
+        <createTable tableName="users">
+            <column name="id" type="bigserial"/>
+            <column name="date_created" defaultValueComputed="now()" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="registrationCode" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="firstName" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lastName" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gradYear" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="geoLocationOld" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="geoLocationNew" type="varchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="password" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="enabled" type="boolean" defaultValue="false">
+                <constraints nullable="false"/>
+            </column>
+
+        </createTable>
+        <addPrimaryKey columnNames="id"
+                       constraintName="pk_users" tableName="users"/>
+    </changeSet>
+
+</databaseChangeLog>
